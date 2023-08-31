@@ -1,0 +1,19 @@
+Description: Remove build timestamp in metainfo that makes build unreproducible
+ metainfo.xml and the about page in the UI both set the date of the
+ software release to the current date at build time. This makes the
+ build unreproducible. This patch just makes that timestamp empty.
+Author: Ben Westover <me@benthetechguy.net>
+Forwarded: not-needed
+Last-Update: 2022-31-10
+
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -142,7 +142,7 @@
+ message(STATUS "Git refspec: ${Launcher_GIT_REFSPEC}")
+ 
+ string(TIMESTAMP TODAY "%Y-%m-%d")
+-set(Launcher_BUILD_TIMESTAMP "${TODAY}")
++set(Launcher_BUILD_TIMESTAMP "")
+ 
+ ################################ 3rd Party Libs ################################
+ 

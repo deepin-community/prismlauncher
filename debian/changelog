@@ -1,5 +1,5 @@
-template-repository (1.0-1) unstable; urgency=medium
+prismlauncher (7.2+ds-1) UNRELEASED; urgency=medium
 
-  * Initial release
+  * Initial Package (Closes: #898972)
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Ben Westover <me@benthetechguy.net>  Mon, 07 Aug 2023 16:30:10 -0400

@@ -1,0 +1,54 @@
+Description: Use system libraries instead of bundled ones
+ This program comes with many bundled libraries. This patch tells cmake
+ to use system versions of them. For now, only some of them (gamemode,
+ quazip, cmark, and toml++) are system libraries, because the others
+ are not yet in Debian.
+Author: Ben Westover <me@benthetechguy.net>
+Forwarded: not-needed
+Last-Update: 2023-09-06
+
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -270,9 +270,6 @@
+     # Find toml++
+     find_package(tomlplusplus 3.2.0 QUIET)
+ 
+-    # Find ghc_filesystem
+-    find_package(ghc_filesystem QUIET)
+-
+     # Find cmark
+     find_package(cmark QUIET)
+ endif()
+@@ -442,14 +439,7 @@
+     message(STATUS "Using system cmark")
+ endif()
+ add_subdirectory(libraries/katabasis) # An OAuth2 library that tried to do too much
+-add_subdirectory(libraries/gamemode)
+ add_subdirectory(libraries/murmur2) # Hash for usage with the CurseForge API
+-if (NOT ghc_filesystem_FOUND)
+-    message(STATUS "Using bundled ghc_filesystem")
+-    add_subdirectory(libraries/filesystem) # Implementation of std::filesystem for old C++, for usage in old macOS
+-else()
+-    message(STATUS "Using system ghc_filesystem")
+-endif()
+ add_subdirectory(libraries/qdcss) # css parser
+ 
+ ############################### Built Artifacts ###############################
+--- a/launcher/CMakeLists.txt
++++ b/launcher/CMakeLists.txt
+@@ -1102,15 +1102,8 @@
+     BuildConfig
+     Katabasis
+     Qt${QT_VERSION_MAJOR}::Widgets
+-    ghcFilesystem::ghc_filesystem
+ )
+ 
+-if (UNIX AND NOT CYGWIN AND NOT APPLE)
+-    target_link_libraries(Launcher_logic
+-        gamemode
+-    )
+-endif()
+-
+ target_link_libraries(Launcher_logic
+     Qt${QT_VERSION_MAJOR}::Core
+     Qt${QT_VERSION_MAJOR}::Xml

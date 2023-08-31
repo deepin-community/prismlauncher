@@ -1,22 +1,491 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: template-repository
-Source: https://github.com/deepin-community/template-repository
+Upstream-Name: Prism Launcher
+Source: https://github.com/PrismLauncher/PrismLauncher
+Files-Excluded:
+ flatpak/shared-modules
+ libraries/cmark
+ libraries/extra-cmake-modules
+ libraries/gamemode
+ libraries/filesystem
+ libraries/quazip
+ libraries/tomlplusplus
+ libraries/zlib
+Comment: In contrib because it's a launcher for Minecraft, a proprietary game.
+ The following folders were removed because:
+  * flatpak/shared-modules: Remove third party code used to build flatpaks.
+  * libraries/cmark: Remove bundled library in favor of system version.
+  * libraries/extra-cmake-modules: Replace bundled library with system version.
+  * libraries/gamemode: Remove bundled library in favor of system version.
+  * libraries/filesystem: Remove bundled library in favor of system version.
+  * libraries/quazip: Remove bundled library in favor of system version.
+  * libraries/tomlplusplus: Remove bundled library in favor of system version.
+  * libraries/zlib: Remove bundled library in favor of system version.
 
 Files: *
-Copyright: 2023 Tsic404 <liuheng@deepin.org>
+Copyright:
+ 2013-2021 MultiMC Contributors
+ 2013-2021 Orochimarufan <orochimarufan.x3@gmail.com>
+ 2021-2022 PolyMC Contributors
+ 2022 Jamie Mansfield <jmansfield@cadixdev.org>
+ 2022 Lenny McLennington <lenny@sneed.church>
+ 2022 dada513 <dada513@protonmail.com>
+ 2022 Swirl <swurl@swurl.xyz>
+ 2022 Tayou <tayou@gmx.net>
+ 2022 icelimetea <fr3shtea@outlook.com>
+ 2022 solonovamax <solonovamax@12oclockpoint.com>
+ 2022-2023 Prism Launcher Contributors
+ 2022-2023 Sefa Eyeoglu <contact@scrumplex.net>
+ 2022-2023 flowln <flowlnlnln@gmail.com>
+ 2022-2023 TheKodeToad <TheKodeToad@proton.me>
+ 2023 seth <getchoo@tuta.io>
+ 2023 Rachel Powers
+License: GPL-3 and Apache-2.0
+
+Files:
+ launcher/BaseInstaller.*
+ launcher/BaseVersion.h
+ launcher/BaseVersionList.h
+ launcher/Commandline.h
+ launcher/Exception.h
+ launcher/InstanceList.h
+ launcher/MMCTime.*
+ launcher/SkinUtils.*
+ launcher/icons/IconList.h
+ launcher/icons/MMCIcon.h
+ launcher/java/JavaCheckerJob.*
+ launcher/java/JavaInstallList.h
+ launcher/java/JavaUtils.h
+ launcher/launch/LaunchStep.*
+ launcher/launch/steps/CheckJava.h
+ launcher/launch/steps/LookupServerAddress.*
+ launcher/launch/steps/PostLaunchCommand.h
+ launcher/launch/steps/PreLaunchCommand.h
+ launcher/launch/steps/TextPrint.h
+ launcher/launch/steps/Update.*
+ launcher/meta/*
+ launcher/minecraft/AssetsUtils.h
+ launcher/minecraft/MinecraftLoadAndCheck.h
+ launcher/minecraft/MinecraftUpdate.*
+ launcher/minecraft/World.h
+ launcher/minecraft/WorldList.h
+ launcher/minecraft/auth/Yggdrasil.*
+ launcher/minecraft/launch/ClaimAccount.h
+ launcher/minecraft/launch/CreateGameFolders.h
+ launcher/minecraft/launch/DirectJavaLaunch.*
+ launcher/minecraft/launch/ExtractNatives.*
+ launcher/minecraft/launch/LauncherPartLaunch.h
+ launcher/minecraft/launch/MinecraftServerTarget.*
+ launcher/minecraft/launch/ModMinecraftJar.h
+ launcher/minecraft/launch/PrintInstanceInfo.*
+ launcher/minecraft/launch/ReconstructAssets.*
+ launcher/minecraft/launch/ScanModFolders.h
+ launcher/modplatform/atlauncher/ATLPackIndex.*
+ launcher/modplatform/technic/SingleZipPackInstallTask.*
+ launcher/modplatform/technic/TechnicPackProcessor.*
+ launcher/news/NewsChecker.h
+ launcher/news/NewsEntry.*
+ launcher/settings/INISettingsObject.*
+ launcher/settings/OverrideSetting.*
+ launcher/settings/PassthroughSetting.*
+ launcher/settings/Setting.*
+ launcher/settings/SettingsObject.*
+ launcher/translations/TranslationsModel.h
+ launcher/ui/dialogs/AboutDialog.h
+ launcher/ui/dialogs/CopyInstanceDialog.h
+ launcher/ui/dialogs/CustomMessageBox.*
+ launcher/ui/dialogs/EditAccountDialog.*
+ launcher/ui/dialogs/IconPickerDialog.*
+ launcher/ui/dialogs/LoginDialog.*
+ launcher/ui/dialogs/MSALoginDialog.h
+ launcher/ui/dialogs/NewComponentDialog.h
+ launcher/ui/dialogs/ProfileSelectDialog.*
+ launcher/ui/dialogs/ProfileSetupDialog.h
+ launcher/ui/dialogs/VersionSelectDialog.*
+ launcher/ui/instanceview/InstanceDelegate.h
+ launcher/ui/instanceview/InstanceProxyModel.*
+ launcher/ui/instanceview/VisualGroup.h
+ launcher/ui/pagedialog/*
+ launcher/ui/pages/BasePageProvider.h
+ launcher/ui/pages/modplatform/atlauncher/AtlFilterModel.*
+ launcher/ui/pages/modplatform/atlauncher/AtlListModel.*
+ launcher/ui/setupwizard/SetupWizard.h
+ launcher/ui/widgets/ErrorFrame.*
+ launcher/ui/widgets/LabeledToolButton.h
+ launcher/ui/widgets/LanguageSelectionWidget.h
+ launcher/ui/widgets/ModListView.*
+ launcher/ui/widgets/PageContainer_p.h
+ launcher/ui/widgets/ProgressWidget.*
+ launcher/ui/widgets/VersionListView.h
+ launcher/ui/widgets/VersionSelectWidget.h
+Copyright:
+ 2013-2021 MultiMC Contributors
+ 2013-2021 Orochimarufan <orochimarufan.x3@gmail.com>
+ 2013-2021 Andrew Okin
+ 2015 Petr Mrazek <peterix@gmail.com>
+ 2021 Jamie Mansfield <jmansfield@cadixdev.org>
+License: Apache-2.0
+
+Files:
+ launcher/DataMigrationTask.*
+ launcher/FastFileIconProvider.*
+ launcher/MangoHud.*
+ launcher/Markdown.*
+ launcher/ResourceDownloadTask.*
+ launcher/RuntimeContext.h
+ launcher/filelink/*
+ launcher/java/JavaInstall.*
+ launcher/launch/steps/QuitAfterGameStop.*
+ launcher/minecraft/mod/DataPack.*
+ launcher/minecraft/mod/MetadataHandler.h
+ launcher/minecraft/mod/TexturePack.*
+ launcher/minecraft/mod/ShaderPack.*
+ launcher/minecraft/mod/WorldSave.*
+ launcher/minecraft/mod/tasks/LocalDataPackParseTask.*
+ launcher/minecraft/mod/tasks/LocalModUpdateTask.*
+ launcher/minecraft/mod/tasks/LocalResourcePackParseTask.*
+ launcher/minecraft/mod/tasks/LocalResourceParse.*
+ launcher/minecraft/mod/tasks/LocalShaderPackParseTask.*
+ launcher/minecraft/mod/tasks/LocalTexturePackParseTask.*
+ launcher/minecraft/mod/tasks/LocalWorldSaveParseTask.*
+ launcher/modplatform/ModIndex.*
+ launcher/modplatform/flame/FlameAPI.*
+ launcher/modplatform/helpers/NetworkResourceAPI.*
+ launcher/modplatform/modrinth/ModrinthAPI.*
+ launcher/modplatform/modrinth/ModrinthPackExportTask.*
+ launcher/modplatform/modrinth/ModrinthPackIndex.*
+ launcher/modplatform/packwiz/*
+ launcher/modplatform/technic/SolderPackManifest.*
+ launcher/net/Logging.*
+ launcher/net/NetUtils.h
+ launcher/pathmatcher/SimplePrefixMatcher.h
+ launcher/ui/dialogs/BlockedModsDialog.*
+ launcher/ui/dialogs/ExportMrPackDialog.*
+ launcher/ui/dialogs/ResourceDownloadDialog.*
+ launcher/ui/pages/instance/ManagedPackPage.*
+ launcher/ui/pages/modplatform/ModModel.*
+ launcher/ui/pages/modplatform/ResourceModel.*
+ launcher/ui/pages/modplatform/ResourcePackModel.*
+ launcher/ui/pages/modplatform/ResourcePackPage.*
+ launcher/ui/pages/modplatform/ResourcePage.h
+ launcher/ui/pages/modplatform/ShaderPackModel.*
+ launcher/ui/pages/modplatform/ShaderPackPage.*
+ launcher/ui/pages/modplatform/TexturePackModel.*
+ launcher/ui/pages/modplatform/TexturePackPage.h
+ launcher/ui/pages/modplatform/flame/FlameResourceModels.*
+ launcher/ui/pages/modplatform/modrinth/ModrinthResourceModels.*
+ launcher/ui/setupwizard/ThemeWizardPage.*
+ launcher/ui/themes/ThemeManager.*
+ launcher/ui/widgets/SubTaskProgressBar.*
+ launcher/ui/widgets/ThemeCustomizationWidget.*
+ launcher/ui/widgets/VariableSizedImageObject.*
+ launcher/updater/ExternalUpdater.h
+ launcher/updater/MacSparkleUpdater.*
+ tests/DataPackParse_test.cpp
+ tests/ResourcePackParse_test.cpp
+ tests/TexturePackParse_test.cpp
+ tests/ShaderPackParse_test.cpp
+ tests/WorldSaveParse_test.cpp
+Copyright:
+ 2022 Sefa Eyeoglu <contact@scrumplex.net>
+ 2022 dada513 <dada513@protonmail.com>
+ 2022 Kenneth Chew <kenneth.c0@protonmail.com>
+ 2022 Jan Drögehoff <sentrycraft123@gmail.com>
+ 2022-2023 flowln <flowlnlnln@gmail.com>
+ 2022-2023 TheKodeToad <TheKodeToad@proton.me>
+ 2022-2023 Rachel Powers
+ 2023 Joshua Goins <josh@redstrate.com>
+ 2023 Trial97 <alexandru.tripon97@gmail.com>
+License: GPL-3
+
+Files:
+ libraries/launcher/org/prismlauncher/EntryPoint.java
+ libraries/launcher/org/prismlauncher/exception/*
+ libraries/launcher/org/prismlauncher/launcher/impl/*
+ libraries/launcher/org/prismlauncher/utils/*.java
+Copyright:
+ 2013-2021 MultiMC Contributors
+ 2022 icelimetea <fr3shtea@outlook.com>
+ 2022 flow <flowlnlnln@gmail.com>
+ 2022 TheKodeToad <TheKodeToad@proton.me>
+ 2022 solonovamax <solonovamax@12oclockpoint.com>
+License: GPL-3 with linking exception and Apache-2.0
+
+Files:
+ libraries/launcher/org/prismlauncher/launcher/Launcher.java
+ libraries/launcher/org/prismlauncher/utils/logging/*
+Copyright:
+ 2022 icelimetea <fr3shtea@outlook.com>
+ 2022 TheKodeToad <TheKodeToad@proton.me>
+ 2022 solonovamax <solonovamax@12oclockpoint.com>
+License: GPL-3 with linking exception
+
+Files: cmake/ECMQueryQt.cmake
+Copyright:
+ 2014 Rohan Garg <rohan16garg@gmail.com>
+ 2014 Alex Merry <alex.merry@kde.org>
+ 2014-2016 Aleix Pol <aleixpol@kde.org>
+ 2017 Friedrich W. H. Kossebau <kossebau@kde.org>
+ 2022 Ahmad Samir <a.samir78@gmail.com>
+License: BSD-3-clause
+
+Files: cmake/GetGitRevisionDescription.*
+Copyright:
+ 2009-2013 Iowa State University
+ 2009-2020 Ryan Pavlik and Contributors
+License: BSL-1
+
+Files: cmake/QtVersionlessBackport.cmake
+Copyright: 2005-2011 Kitware, Inc.
+License: BSD-3-clause
+
+Files: cmake/QtVersionOption.cmake
+Copyright: 2021 Volker Krause <vkrause@kde.org>
+License: BSD-3-clause
+
+Files: libraries/katabasis/*
+Copyright: 2012 Akos Polster
+License: BSD-2-clause
+
+Files: libraries/libnbtplusplus/*
+Copyright: 2013-2015 ljfa-ag
+License: LGPL-3+
+
+Files: libraries/LocalPeer/*
+Copyright: 2013 Digia Plc
+License: BSD-3-clause
+
+Files: libraries/murmur2/*
+Copyright: Austin Appleby
+License: public-domain
+
+Files: libraries/qdcss/*
+Copyright: 2023 kumquat-ir
+License: LGPL-3
+
+Files: libraries/rainbow/*
+Copyright:
+ 2007 Matthew Woehlke <mw_triad@users.sourceforge.net>
+ 2007 Olaf Schmidt <ojschmidt@kde.org>
+ 2007 Thomas Zander <zander@kde.org>
+ 2007 Zack Rusin <zack@kde.org>
+ 2015 Petr Mrazek <peterix@gmail.com>
 License: GPL-2+
- This package is free software; you can redistribute it and/or modify
+
+Files: libraries/systeminfo/src/distroutils.cpp
+Copyright: 2017 Nate Coraor
+License: Expat
+
+Files: debian/*
+Copyright: 2023 Ben Westover <me@benthetechguy.net>
+License: GPL-3
+
+License: GPL-3
+ This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
+ the Free Software Foundation, version 3.
  .
- This package is distributed in the hope that it will be useful,
+ This program is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program. If not, see <https://www.gnu.org/licenses/>
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  .
- On Debian systems, the complete text of the GNU General
- Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+ On Debian systems, the full text of the GNU General Public
+ License version 3 can be found in the file
+ `/usr/share/common-licenses/GPL-3`.
+
+License: GPL-3 with linking exception
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, version 3.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ Linking this library statically or dynamically with other modules is
+ making a combined work based on this library. Thus, the terms and
+ conditions of the GNU General Public License cover the whole
+ combination.
+ .
+ As a special exception, the copyright holders of this library give
+ you permission to link this library with independent modules to
+ produce an executable, regardless of the license terms of these
+ independent modules, and to copy and distribute the resulting
+ executable under terms of your choice, provided that you also meet,
+ for each linked independent module, the terms and conditions of the
+ license of that module. An independent module is a module which is
+ not derived from or based on this library. If you modify this
+ library, you may extend this exception to your version of the
+ library, but you are not obliged to do so. If you do not wish to do
+ so, delete this exception statement from your version.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the full text of the GNU General Public
+ License version 3 can be found in the file
+ `/usr/share/common-licenses/GPL-3`.
+
+License: GPL-2+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the full text of the GNU General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/GPL-2`.
+
+License: LGPL-3+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published
+ by the Free Software Foundation; either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public
+ License version 3 can be found in the file
+ `/usr/share/common-licenses/LGPL-3`.
+
+License: LGPL-3
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published
+ by the Free Software Foundation, version 3.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public
+ License version 3 can be found in the file
+ `/usr/share/common-licenses/LGPL-3`.
+
+License: Apache-2.0
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ <http://www.apache.org/licenses/LICENSE-2.0>.
+ .
+ On Debian systems, the full text of the Apache License version 2.0 can
+ be found in the file `/usr/share/common-licenses/Apache-2.0`.
+
+License: BSD-3-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 3. Neither the name of the copyright holder nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: BSD-2-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: BSL-1
+ Permission is hereby granted, free of charge, to any person or
+ organization obtaining a copy of the software and accompanying
+ documentation covered by this license (the "Software") to use,
+ reproduce, display, distribute, execute, and transmit the Software,
+ and to prepare derivative works of the Software, and to permit
+ third-parties to whom the Software is furnished to do so, all
+ subject to the following:
+ .
+ The copyright notices in the Software and this entire statement,
+ including the above license grant, this restriction and the following
+ disclaimer, must be included in all copies of the Software, in whole
+ or in part, and all derivative works of the Software, unless such
+ copies or derivative works are solely in the form of machine-executable
+ object code generated by a source language processor.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND
+ NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE
+ DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER
+ LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT
+ OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
+ .
+ The above copyright notice and this permission notice shall be
+ included in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+License: public-domain
+ This code is placed in the public domain; the author
+ hereby disclaims copyright to this source code.
