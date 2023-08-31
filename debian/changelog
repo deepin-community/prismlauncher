@@ -1,3 +1,9 @@
+prismlauncher (7.2+ds-1deepin1) unstable; urgency=medium
+
+  * Move distribution to unstable
+
+ -- Chang Yang <yangchang@deepin.org>  Thu, 31 Aug 2023 18:55:00 +0800
+
 prismlauncher (7.2+ds-1) UNRELEASED; urgency=medium
 
   * Initial Package (Closes: #898972)
