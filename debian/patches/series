@@ -1,3 +1,5 @@
 armhf-fix.patch
 system-libraries.patch
 reproducibility.patch
+fix-ptr-iterator-type.diff
+fix-test-segfaults.diff

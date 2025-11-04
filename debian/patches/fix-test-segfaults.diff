@@ -1,0 +1,46 @@
+The patch is originated from https://github.com/Trial97/PrismLauncher/commit/2030041fcc14aa9d56f59e0a61c8a26ba6522a0f
+
+Necessary modifications are added for this version which is older.
+
+--- prismlauncher-7.2+ds.orig/launcher/Application.h
++++ prismlauncher-7.2+ds/launcher/Application.h
+@@ -80,6 +80,12 @@ namespace Meta {
+ #endif
+ #define APPLICATION (static_cast<Application *>(QCoreApplication::instance()))
+ 
++// Used for checking if is a test
++#if defined(APPLICATION_DYN)
++#undef APPLICATION_DYN
++#endif
++#define APPLICATION_DYN (dynamic_cast<Application*>(QCoreApplication::instance()))
++
+ class Application : public QApplication
+ {
+     // friends for the purpose of limiting access to deprecated stuff
+--- prismlauncher-7.2+ds.orig/launcher/CMakeLists.txt
++++ prismlauncher-7.2+ds/launcher/CMakeLists.txt
+@@ -1090,6 +1090,9 @@ endif()
+ 
+ # Add executable
+ add_library(Launcher_logic STATIC ${LOGIC_SOURCES} ${LAUNCHER_SOURCES} ${LAUNCHER_UI} ${LAUNCHER_RESOURCES})
++if(BUILD_TESTING)
++    target_compile_definitions(Launcher_logic PUBLIC LAUNCHER_TEST)
++endif()
+ target_include_directories(Launcher_logic PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+ target_link_libraries(Launcher_logic
+     systeminfo
+--- prismlauncher-7.2+ds.orig/launcher/ui/pages/modplatform/ResourceModel.cpp
++++ prismlauncher-7.2+ds/launcher/ui/pages/modplatform/ResourceModel.cpp
+@@ -57,9 +57,11 @@ auto ResourceModel::data(const QModelInd
+             return pack->description;
+         }
+         case Qt::DecorationRole: {
+-            if (auto icon_or_none = const_cast<ResourceModel*>(this)->getIcon(const_cast<QModelIndex&>(index), pack->logoUrl);
++            if (APPLICATION_DYN) {
++	    if (auto icon_or_none = const_cast<ResourceModel*>(this)->getIcon(const_cast<QModelIndex&>(index), pack->logoUrl);
+                 icon_or_none.has_value())
+                 return icon_or_none.value();
++	    }
+ 
+             return APPLICATION->getThemedIcon("screenshot-placeholder");
+         }

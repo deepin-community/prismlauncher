@@ -1,0 +1,23 @@
+--- prismlauncher-7.2+ds.orig/launcher/translations/TranslationsModel.cpp
++++ prismlauncher-7.2+ds/launcher/translations/TranslationsModel.cpp
+@@ -524,7 +524,7 @@ Language * TranslationsModel::findLangua
+     }
+     else
+     {
+-        return found;
++        return &*found;
+     }
+ }
+ 
+@@ -655,8 +655,10 @@ QModelIndex TranslationsModel::selectedI
+     auto found = findLanguage(d->m_selectedLanguage);
+     if(found)
+     {
++	Language *lang_begin_ptr = &*d->m_languages.begin();
++	size_t distance = (size_t)(found - lang_begin_ptr);
+         // QVector iterator freely converts to pointer to contained type
+-        return index(found - d->m_languages.begin(), 0, QModelIndex());
++        return index(distance, 0, QModelIndex());
+     }
+     return QModelIndex();
+ }

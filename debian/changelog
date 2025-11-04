@@ -1,3 +1,9 @@
+prismlauncher (7.2+ds-1deepin2) unstable; urgency=medium
+
+  * fix: cannot build due to pointer and iterator type conversions
+
+ -- sisungo <sisungo@icloud.com>  Fri, 17 Oct 2025 21:56:00 +0800
+
 prismlauncher (7.2+ds-1deepin1) unstable; urgency=medium
 
   * Move distribution to unstable
